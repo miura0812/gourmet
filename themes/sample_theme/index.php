@@ -197,22 +197,38 @@
                     </div>
                   </div>
                   </a>
+
+                
+
                   <div class="column-area">
                     <h2>COLUMN</h2>
-                    <a href="https://www.patisserie-freres.jp/">
+
+                    <?php query_posts('posts_per_page=3s'); ?>
+                    <?php if(have_posts()): ?>
+                    <?php while(have_posts()): the_post(); ?>
+
+                    <a href="<?php the_permalink(); ?>">
                     <div class="column-box fadeup">
                       <div class="column-image">
-                        <img src="<?php echo esc_attr(get_template_directory_uri()); ?>/image/IMG-0984.jpg" alt="パティスリーフレール">
+                        <img src="<?php 
+                            if(has_post_thumbnail()) :
+                                $id = get_post_thumbnail_id();
+                                $img = wp_get_attachment_image_src($id,'full');
+                            endif; ?>
+                            <?php echo $img[0]; ?>" alt="gazou">
                       </div>
                       <div class="column-paragraph">
                         <div class="column-paragraph-p">
-                        <h3>パティスリーフレール</h3>
-                        <p>「徳寿」グループのスイーツ部門のお店を紹介！</p>
+                        <h3><?php the_title(); ?></h3>
+                        <p><?php echo wp_trim_words(get_the_content(),30,'...'); ?></p>
                         </div>
                       </div>
                     </div>
                     </a>
-                    <a href="https://xn--vnxt30bhru.com/">
+                    <?php endwhile; ?>
+                    <?php endif; ?>
+
+                    <!-- <a href="https://xn--vnxt30bhru.com/">
                     <div class="column-box fadeup">
                       <div class="column-image">
                         <img src="<?php echo esc_attr(get_template_directory_uri()); ?>/image/IMG-0824.jpg" alt="黒花火">
@@ -237,7 +253,7 @@
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </a> -->
                   </div>
 
                 </div>
