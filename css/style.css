@@ -1,0 +1,742 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+    
+
+body {
+    font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+.fadeup {
+    /* 最初は非表示 */
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 1s, opacity 1s, visibility 1s;
+}
+
+  /* フェードイン時に入るクラス */
+  .is-fadein {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.header-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 50px;
+    z-index: 99;
+    transition: all 0.5s ease;
+}
+
+.header-box h1 {
+    margin-left: 20px;
+}
+
+
+.header-box h1 a {
+    color: #000;
+}
+
+.header-nav {
+    display: flex;
+    padding-top: 20px;
+    margin-left: 20px;
+}
+
+.header-nav li {
+    text-align: center;
+    width: 100px;
+    transition: all 0.3s ease-in-out;
+    margin:0 0 20px 20px;
+}
+
+.header-nav li a{
+    color: #000;
+    display: block;
+}
+
+.header-nav li:hover {
+    background-color: brown;
+    color: white;
+    border-radius: 4px;
+}
+
+nav button {
+    display: none;
+}
+
+.header-nav li a:hover {
+    color: #fff;
+} 
+
+.header-img {
+    background-image: url(../image/susukino.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.header-img::before {
+    content: "";
+    background-color: #bf000f;
+    transform: skewY(10deg);
+    width: 100%;
+    height: 900px;
+    position: absolute;
+    top: 95%;
+    left: 0;
+}
+
+.header-img::after {
+    content: "";
+    background-color: #d60616;
+    transform: skewY(-10deg);
+    width: 100%;
+    height: 900px;
+    position: absolute;
+    top: 95%;
+    right: 0;
+}
+
+.header-img img {
+    position:absolute;
+    top:40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+}
+
+.header-img h2 {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 5px;
+}  
+
+
+main {
+    background-image: url(../image/bg_polka_dots02.png);
+    background-size: 100%;
+    background-repeat: repeat;
+}
+
+
+.heading {
+    text-align: center;
+    padding: 50px 0;
+    position: relative;
+}
+
+.heading h2 {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.slider a {
+    color: #000;
+}
+
+.slider_box {
+    background-color: #fff;
+    box-shadow: 0px 5px 15px -3px #777777;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slider_box:hover img {
+    transform: scale(1.2);
+}
+
+.slider_box:hover h2{
+    color: brown;
+}
+
+.slider-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.slider-image img{
+    width: 100%;
+    height: 250px;
+    transition: all 0.5s ease-in-out;
+}
+
+.slider_paragraph {
+    padding: 24px;
+    height: 100%;
+}
+
+.slider_paragraph h2 {
+    font-size: calc((100vw - 320px) / 140 + 16px);
+}
+
+.slider_paragraph p {
+    font-size: calc((100vw - 320px) / 140 + 8px);
+}
+
+
+.shop-box {
+    box-shadow: 0px 5px 15px -3px #777777;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.shop-box:hover {
+    transition: all 0.5s ease-in-out;
+}
+
+.shop-image {
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+
+.shop-box:hover img {
+    transform:scale(1.2);
+}
+
+.shop-box:hover h2 {
+    color: brown;
+}
+
+.shop-box:nth-child(2) {
+    margin: 0 32px;
+}
+
+.shop-box a {
+    color: #000;
+}
+
+.shop-group {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.group2 {
+    margin-top: 50px;
+}
+
+.shop-image {
+    overflow: hidden;
+    height: 200px;
+}
+
+.shop-image img {
+    width: 100%;
+    height: 200px;
+    transition: all 0.5s ease-in-out;
+    vertical-align: bottom;
+}
+
+
+.shop-paragraph {
+    padding: 32px;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+}
+
+.shop-paragraph h2{
+    font-size: calc((100vw - 320px) / 140 + 16px);
+}
+
+.shop-paragraph p{
+    font-size: calc((100vw - 320px) / 140 + 8px);
+}
+
+.shop-button {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.shop-button button{
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: brown;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.shop-button button a {
+    color: #fff;
+}
+
+
+.shop-button button:hover {
+    background-color: #fff;
+    color: brown;
+    border: 2px solid brown;
+}
+
+.page_area {
+    width: 70%;
+    margin: 0 auto 100px;
+    display: flex;
+}
+
+.page_area a {
+    color: #000;
+}
+
+.rank-height {
+    height: 50px;
+}
+
+.ranking-area {
+    width: 50%;
+    margin-right: 10px;
+}
+
+
+.ranking-box {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    margin: 24px 10px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0px 0px 15px -5px #777777;
+}
+
+.rank-image {
+    width: 300px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.rank-image img{
+    width: 100%;
+    height: 150px;
+    vertical-align: middle;
+    transition: all 0.5s ease-in-out;
+    
+}
+
+.ranking-box:hover img {
+    transform: scale(1.2);
+}
+
+.ranking-box:hover h3 {
+    color: brown;
+}
+
+.rank-paragraph {
+    padding: 24px;
+    width: 100%;
+    background-color: #fff;
+}
+
+
+.column-area {
+    width: 50%;
+    margin-left: 10px;
+}
+
+.column-area {
+    width: 50%;
+}
+
+
+.column-box {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    margin: 24px 10px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0px 0px 15px -5px #777777;
+}
+
+.column-image {
+    width: 300px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.column-image img{
+    width: 100%;
+    height: 150px;
+    vertical-align: middle;
+    transition: all 0.5s ease-in-out;
+    
+}
+
+.column-box:hover img {
+    transform: scale(1.2);
+}
+
+.column-box:hover h3 {
+    color: brown;
+}
+
+.column-paragraph {
+    padding: 24px;
+    width: 100%;
+    background-color: #fff;
+}
+
+
+.background {
+    background-image: url(../image/oodoori.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 50vh;
+    position: relative;
+}
+
+.background-black {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.background h2 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 24px;
+    width: 80%;
+    text-align: center;
+    z-index: 999;
+    font-size: calc((100vw - 320px) / 140 + 16px);
+}
+
+.map-area {
+    display: flex;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.map-area li {
+    color: #fff;
+    font-size: 18px;
+    margin-left: 50px;
+    transition: all 0.5s ease-in-out;
+    white-space: nowrap;
+    font-size: calc((100vw - 320px) / 140 + 8px);
+}
+
+.map-area li:hover {
+    border-bottom: 1px solid #fff;
+}
+
+.map-area li:first-of-type {
+    margin: 0;
+}
+
+.map-area li a{
+    color: #fff;
+}
+
+
+.genre-box {
+    text-align: center;
+}
+
+.genre-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.genre-area:first-of-type {
+    margin: 0;
+}
+
+.genre-box {
+    padding-top: 50px;
+    height: 300px;
+}
+
+.genre-area {
+    padding-top: 50px;
+}
+
+.genre-area li {
+    font-size: 18px;
+    margin-left: 50px;
+    transition: all 0.5s ease-in-out;
+    font-size: calc((100vw - 320px) / 140 + 8px);
+}
+
+.genre-area li a {
+    color: #000;
+}
+
+.genre-area li:hover {
+    border-bottom: 1px solid #000;
+}
+
+footer {
+    text-align: center;
+    background-color: #bf000f;
+}
+
+footer small {
+    color: #fff;
+}
+
+
+
+
+@media screen and (max-width:960px){
+    
+
+    nav button {
+        display: block;
+    }
+
+    .header-nav {
+        margin-top: 0;
+    }
+
+    /* ハンバーガーメニュー */
+
+    .menu-btn{
+        position: relative;
+        top: 5px;
+        right: 20px;
+        z-index: 2;
+        width: 40px;
+        height: 40px;
+        background-color:rgba(255, 255, 255,0);
+        color: #fff;
+        border: none;
+      }
+      
+      .menu-btn span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        margin-bottom: 10px;
+        transition: all 0.3s ease;
+      }
+    
+      .menu-btn span:nth-child(1) {
+        top: 20%;
+      }
+    
+      .menu-btn span:nth-child(2) {
+        top: 50%;
+      }
+    
+      .menu-btn span:nth-child(3) {
+        top: 80%;
+      }
+    
+      .menu-btn.close span:nth-child(1) {
+        transform: rotate(-45deg);
+        top: 50%;
+      }
+      
+      .menu-btn.close span:nth-child(2) {
+        opacity: 0;
+      }
+    
+      .menu-btn.close span:nth-child(3) {
+        transform: rotate(45deg);
+        top: 50%;
+      }
+    
+    
+      /*----------------------------
+      * メニュー本体
+      *----------------------------*/
+      .menu{
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #d60616;
+      }
+      .menu_item{
+        width: 100%;
+        height: auto;
+        margin: 12px 0;
+        text-align: center;
+        color: #fff;
+        font-size: 24px;
+      }
+
+      .header-nav li a{
+        color: #fff;
+        display: block;
+    }
+    
+    .header-nav li:hover {
+        color: white;
+        border-radius: 4px;
+    }
+    
+      
+      /*----------------------------
+      * アニメーション部分
+      *----------------------------*/
+      
+      /* アニメーション前のメニューの状態 */
+      .menu{
+        display: none;
+        transition: opacity .5s ease;
+        opacity: 0;
+      }
+      /* アニメーション後のメニューの状態 */
+      .menu.is-active{
+        display: flex;
+        opacity: 1;
+      }
+    
+
+    .header-nav li {
+        font-weight: bold;
+        width: 150px;
+    }
+
+    .shop-group {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+
+    .shop-box {
+        margin: 50px 0 0 0;
+    }
+
+    .shop-box:nth-child(2) {
+        margin: 50px 0 0 0;
+    }
+
+    .page_area {
+        width: 85%;
+        flex-direction: column;
+        
+    }
+
+    .ranking-area,
+    .column-area {
+        width: 100%;
+    }
+
+    .ranking-area h2,
+    .column-area h2 {
+        text-align: center;
+    }
+
+    .ranking-box {
+        margin: 50px auto;
+    }
+
+    .shop-image {
+        overflow: hidden;
+        height: 100%;
+    }
+    
+    .shop-image img {
+        width: 100%;
+        height: 100%;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .ranking-box {
+        max-width: 650px;
+    }
+
+    .column-box {
+        margin: 50px auto;
+        max-width: 650px;
+    }
+
+    .ranking-box h3{
+        font-size: calc((100vw - 320px) / 140 + 16px);
+    }
+    
+    .ranking-box p{
+        font-size: calc((100vw - 320px) / 140 + 8px);
+    }
+
+    .column-box h3{
+        font-size: calc((100vw - 320px) / 140 + 16px);
+    }
+    
+    .column-box p{
+        font-size: calc((100vw - 320px) / 140 + 8px);
+    }
+
+    .map-area li {
+        margin-left: 25px;
+        
+    }
+
+    .genre-area li{
+        margin-left: 25px;
+    }
+}
+
+@media screen and (max-width:480px){
+
+    .rank-image {
+        width: 100%;
+    }
+    
+    .rank-image img{
+        width: 100%;
+    }
+
+    .column-image {
+        width: 100%;
+    }
+    
+    .column-image img{
+        width: 100%;
+    }
+   
+}
